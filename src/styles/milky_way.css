@@ -1,0 +1,213 @@
+/* Cosmic background and container */
+.mw-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+}
+
+.mw-container canvas {
+  filter: brightness(1.1) contrast(1.2);
+}
+
+.info-box {
+  background: rgba(0, 0, 0, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  width: 300px;
+  transform: translate(-50%, -50%);
+  backdrop-filter: blur(10px);
+  box-shadow: 
+    0 0 20px rgba(255, 255, 255, 0.1),
+    0 0 30px rgba(255, 255, 255, 0.05),
+    0 0 40px rgba(255, 255, 255, 0.025);
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to { 
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.info-image-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.info-box h2 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.info-box p {
+  margin: 10px 0;
+}
+
+.info-box button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #333;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.info-box button:hover {
+  background-color: #333;
+}
+
+.info-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-text {
+  color: white;
+  text-align: center;
+}
+
+.info-text h3 {
+  font-size: 1.5rem;
+  margin: 0 0 10px 0;
+  background: linear-gradient(45deg, #fff, #aaa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.info-text p {
+  margin: 0 0 15px 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.4;
+}
+
+.info-text button {
+  align-self: center;
+}
+
+.explore-btn {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.explore-button {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  font-size: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.explore-button:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.explore-button:hover:before {
+  left: 100%;
+}
+
+.explore-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-animation {
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes pulse-glow {
+  0% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+}
+
+.pulse-animation {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Glowing effect for stars */
+@keyframes glow {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+
+/* Add glow effect for the spotlight area */
+@keyframes spotlight-pulse {
+  0% {
+    filter: brightness(1) blur(8px);
+  }
+  50% {
+    filter: brightness(1.2) blur(12px);
+  }
+  100% {
+    filter: brightness(1) blur(8px);
+  }
+}

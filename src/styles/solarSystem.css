@@ -1,0 +1,101 @@
+.ss-container {
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #000; 
+  }
+  
+  .ss-container canvas {
+    width: 100%;
+    height: 100%;
+  }
+
+  .ss-container h1 {
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+
+
+.previous-button, .planet-button, .info-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.previous-button:hover, .planet-button:hover, .info-button:hover {
+  background-color: #0056b3;
+}
+
+.info-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.info-popup-content {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-align: left;
+  color: #000;
+  max-width: 600px;
+  width: 90%;
+}
+
+.info-popup-content h2 {
+  text-align: center;
+  margin: 0;
+  font-size: 2em;
+}
+
+.info-popup-content p {
+  margin: 10px 0;
+}
+
+.info-planet-buttons {
+  display: flex;
+  justify-content: right;
+  align-self: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.info-planet-buttons button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.info-planet-buttons button:hover {
+  background-color: #0056b3;
+}
+
+.planet-image {
+  width: 100%;
+  height: auto;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+.info-planet-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
