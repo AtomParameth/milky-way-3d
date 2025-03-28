@@ -13,11 +13,13 @@ import Uranus from './components/uranus'
 import Neptune from './components/neptune'
 import Sun from './components/sun'
 import Blackhole from './components/blackhole'
+import Help from './components/Help'
 
 function App() {
   return (
     <Router>
       <div className="app-container">
+        <Help />
         <main className="main-content">
           <Routes>
             <Route path="/" element={<MilkyWay />} />

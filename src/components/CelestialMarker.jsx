@@ -64,10 +64,34 @@ const CelestialMarker = ({ type, position, onClick, isHovered, showLabel = true,
         <meshBasicMaterial color={style.glowColor} transparent opacity={0.3} />
       </mesh>
 
-      {/* Label */}
+      {/* Label with improved rendering configuration */}
       {showLabel && label && (
-        <Html position={[style.scale[0] * 1.5, style.scale[1] * 1.5, 0]}>
-          <div className="celestial-label" style={{ color: style.color }}>
+        <Html
+          position={[style.scale[0] * 1.5, style.scale[1] * 1.5, 0]}
+          style={{ 
+            pointerEvents: 'none',
+            userSelect: 'none'
+          }}
+          prepend
+          center
+          occlude
+          zIndexRange={[0, 0]}
+          calculatePosition={(el, camera, size) => {
+            return [size.width / 2, size.height / 2]
+          }}
+        >
+          <div 
+            className="celestial-label" 
+            style={{ 
+              color: style.color,
+              transform: 'scale(1)',
+              transformOrigin: 'center',
+              width: 'auto',
+              whiteSpace: 'nowrap',
+              position: 'relative',
+              zIndex: 1
+            }}
+          >
             {label}
           </div>
         </Html>
