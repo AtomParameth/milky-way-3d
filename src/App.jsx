@@ -12,6 +12,7 @@ import Saturn from './components/saturn'
 import Uranus from './components/uranus'
 import Neptune from './components/neptune'
 import Sun from './components/sun'
+import Blackhole from './components/blackhole'
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Route path="/saturn" element={<Saturn />} />
             <Route path="/uranus" element={<Uranus />} />
             <Route path="/neptune" element={<Neptune />} />
+            <Route path="/blackhole" element={<Blackhole />} />
           </Routes>
         </main>
       </div>
