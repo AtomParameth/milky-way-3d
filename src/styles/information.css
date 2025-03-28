@@ -353,7 +353,6 @@
 
 .documentation-modal.active {
   display: block;
-  animation: modalFadeIn 0.3s ease-out;
 }
 
 .modal-overlay {
@@ -371,6 +370,11 @@
 
 .modal-overlay.active {
   display: block;
+}
+
+/* Prevent scrolling of background content when modal is open */
+body.modal-open {
+  overflow: hidden;
 }
 
 .documentation-modal h2 {

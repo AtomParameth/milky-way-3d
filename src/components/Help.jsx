@@ -1,7 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Help = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    // Toggle body class when modal opens/closes
+    if (isModalOpen) {
+      document.body.classList.add('modal-open');
+    } else {
+      document.body.classList.remove('modal-open');
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.classList.remove('modal-open');
+    };
+  }, [isModalOpen]);
 
   return (
     <>
@@ -15,7 +29,7 @@ const Help = () => {
 
       {isModalOpen && (
         <>
-          <div className="modal-overlay" onClick={() => setIsModalOpen(false)} />
+          <div className="modal-overlay active" />
           <div className="documentation-modal active">
             <button 
               className="modal-close" 
